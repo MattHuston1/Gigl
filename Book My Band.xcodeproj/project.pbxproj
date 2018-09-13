@@ -12,6 +12,9 @@
 		22383B95214ABFDF00CAC7BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22383B93214ABFDF00CAC7BF /* Main.storyboard */; };
 		22383B97214ABFE200CAC7BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22383B96214ABFE200CAC7BF /* Assets.xcassets */; };
 		22383B9A214ABFE200CAC7BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22383B98214ABFE200CAC7BF /* LaunchScreen.storyboard */; };
+		22383BA4214ACEE000CAC7BF /* BandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA3214ACEE000CAC7BF /* BandViewController.swift */; };
+		22383BA6214AD43B00CAC7BF /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA5214AD43A00CAC7BF /* ShowsViewController.swift */; };
+		22383BA8214B056900CAC7BF /* PromoterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA7214B056900CAC7BF /* PromoterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		22383B96214ABFE200CAC7BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22383B99214ABFE200CAC7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22383B9B214ABFE200CAC7BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22383BA3214ACEE000CAC7BF /* BandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandViewController.swift; sourceTree = "<group>"; };
+		22383BA5214AD43A00CAC7BF /* ShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
+		22383BA7214B056900CAC7BF /* PromoterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoterViewController.swift; path = Assets.xcassets/PromoterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				22383B8F214ABFDF00CAC7BF /* AppDelegate.swift */,
 				22383B91214ABFDF00CAC7BF /* ViewController.swift */,
+				22383BA3214ACEE000CAC7BF /* BandViewController.swift */,
+				22383BA7214B056900CAC7BF /* PromoterViewController.swift */,
+				22383BA5214AD43A00CAC7BF /* ShowsViewController.swift */,
 				22383B93214ABFDF00CAC7BF /* Main.storyboard */,
 				22383B96214ABFE200CAC7BF /* Assets.xcassets */,
 				22383B98214ABFE200CAC7BF /* LaunchScreen.storyboard */,
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22383BA4214ACEE000CAC7BF /* BandViewController.swift in Sources */,
 				22383B92214ABFDF00CAC7BF /* ViewController.swift in Sources */,
 				22383B90214ABFDF00CAC7BF /* AppDelegate.swift in Sources */,
+				22383BA8214B056900CAC7BF /* PromoterViewController.swift in Sources */,
+				22383BA6214AD43B00CAC7BF /* ShowsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
