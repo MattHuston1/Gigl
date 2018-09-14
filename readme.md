@@ -51,9 +51,8 @@ This does not need to be your absolute final ERD. We want you thinking about you
 
 Inlcude some wireframes of your project.
 * **You can draw them out & take a picture (quickest option) or use:**
-* [Wireframe.cc](https://wireframe.cc/)
-* [Draw.io](https://www.draw.io/)
-* [Lucidchart](https://www.lucidchart.com/)
+
+* [WebFrame](https://github.com/MattHuston1/Giggle/blob/master/images/CapstoneWebFrame.png)
 * Any other software you like
 
 Do not spend more than 2 hours on your wireframes.
