@@ -7,29 +7,91 @@
 //
 
 import UIKit
+import GooglePlaces
 
-class BandViewController: UIViewController {
-
+class BandViewController: UIViewController, UITextFieldDelegate  {
+    
+    var bandInfo = ""
+    
+    @IBOutlet weak var BandName: UITextField!
+    @IBOutlet weak var Genre: UITextField!
+    @IBOutlet weak var Website: UITextField!
+    @IBOutlet weak var Date: UITextField!
+    @IBOutlet weak var Location: UITextField!
+    @IBOutlet weak var Email: UITextField!
+    @IBOutlet weak var Message: UITextView!
+    
+    @IBOutlet weak var txtSearch: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        BandName.delegate = self
+        Genre.delegate = self
+        Website.delegate = self
+        Date.delegate = self
+        Location.delegate = self
+        Email.delegate = self
+//        Message.delegate = self as! UITextViewDelegate
+        
 
         // Do any additional setup after loading the view.
+//        txtSearch.delegate = self
     }
+    
+    //MARK:- UITextFieldDelegate
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        searchPlaceFromGoogle(place: textField.text!)
+//        return true
+//    }
+//
+//    func searchPlaceFromGoogle(place:String) {
+//        var strGoogleApi = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(place)&key=AIzaSyDxkNnyp5RgnPDmAqtOdsZFOMU-xW1nPM8"
+//        strGoogleApi = strGoogleApi.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        var urlRequest = URLRequest(url: URL(string: strGoogleApi)!)
+//        urlRequest.httpMethod = "GET"
+//        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+//            if error == nil {
+//                let jsonDict = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+//                print("json ==\(jsonDict)")
+//            } else {
+//
+//            }
+//        }
+//        task.resume()
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func SubmitButton(_ sender: Any) {
+        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)"
+        performSegue(withIdentifier: "BandInfo", sender: self)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ShowsViewController
+        vc.bandData = self.bandInfo
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        BandName.resignFirstResponder()
+        Genre.resignFirstResponder()
+        Website.resignFirstResponder()
+        Date.resignFirstResponder()
+        Location.resignFirstResponder()
+        Email.resignFirstResponder()
+        Message.resignFirstResponder()
+    }
 
+}
+
+extension ViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
