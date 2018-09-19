@@ -86,12 +86,40 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
         Email.resignFirstResponder()
         Message.resignFirstResponder()
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == BandName {
+            textField.resignFirstResponder()
+            Genre.becomeFirstResponder()
+        } else if textField == Genre {
+            textField.resignFirstResponder()
+            Website.becomeFirstResponder()
+        } else if textField == Website{
+            textField.resignFirstResponder()
+            Date.becomeFirstResponder()
+        }else if textField == Date{
+            textField.resignFirstResponder()
+            Location.becomeFirstResponder()
+        }else if textField == Location{
+            textField.resignFirstResponder()
+            Email.becomeFirstResponder()
+        }else if textField == Email{
+            textField.resignFirstResponder()
+            Message.becomeFirstResponder()
+        }else if textField == Message{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }
+
 
 extension ViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
         textField.resignFirstResponder()
         return true
     }
 }
+
+

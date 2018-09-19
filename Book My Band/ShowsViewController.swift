@@ -33,6 +33,7 @@ class ShowsViewController: UIViewController {
                     let myJson = try JSONSerialization.jsonObject(with:
                         dataResponse, options: [])
                     print(myJson) //Response result
+                    
 
                 } catch let parsingError {
                     print("Error", parsingError)
