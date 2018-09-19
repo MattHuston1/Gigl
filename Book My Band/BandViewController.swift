@@ -19,7 +19,7 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var Date: UITextField!
     @IBOutlet weak var Location: UITextField!
     @IBOutlet weak var Email: UITextField!
-    @IBOutlet weak var Message: UITextView!
+    @IBOutlet weak var Message: UITextField!
     
     @IBOutlet weak var txtSearch: UITextField!
     
@@ -32,6 +32,8 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
         Date.delegate = self
         Location.delegate = self
         Email.delegate = self
+        Message.delegate = self
+        
 //        Message.delegate = self as! UITextViewDelegate
         
 
@@ -67,7 +69,7 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func SubmitButton(_ sender: Any) {
-        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)"
+        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)\nMessage: \(Message.text!)"
         performSegue(withIdentifier: "BandInfo", sender: self)
 
     }
@@ -108,6 +110,7 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
             Message.becomeFirstResponder()
         }else if textField == Message{
             textField.resignFirstResponder()
+
         }
         return true
     }
