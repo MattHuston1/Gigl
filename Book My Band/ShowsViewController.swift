@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class ShowsViewController: UIViewController {
 
     @IBOutlet weak var BandData: UITextView!
     
+    @IBOutlet weak var TableView: UITableView!
     
     var bandData = ""
      var bandsArr = [String]()
@@ -22,26 +25,38 @@ class ShowsViewController: UIViewController {
         BandData.text = bandData
         
         
-            guard let url = URL(string: "https://bookmybandserver.herokuapp.com/bands") else {return}
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                guard let dataResponse = data,
-                    error == nil else {
-                        print(error?.localizedDescription ?? "Response Error")
-                        return }
-                do{
-                    //here dataResponse received from a network request
-                    let myJson = try JSONSerialization.jsonObject(with:
-                        dataResponse, options: [])
-                    print(myJson) //Response result
-                    
-
-                } catch let parsingError {
-                    print("Error", parsingError)
-                }
+        
+        Alamofire.request("https://bookmybandserver.herokuapp.com/bands").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                print(swiftyJsonVar)
             }
-            task.resume()
         }
-    
+        
+//            guard let url = URL(string: "https://bookmybandserver.herokuapp.com/bands") else {return}
+//            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//                guard let dataResponse = data,
+//                    error == nil else {
+//                        print(error?.localizedDescription ?? "Response Error")
+//                        return }
+//                do{
+//                    //here dataResponse received from a network request
+//
+//                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+//                    let typeOf = type(of: json)
+//                    print(typeOf)
+//                    print(json)
+//
+//                    //Response result
+//
+//
+//                } catch let parsingError {
+//                    print("Error", parsingError)
+//                }
+//            }
+//            task.resume()
+//        }
+    }
 
         // Do any additional setup after loading the view.
 
@@ -62,3 +77,4 @@ class ShowsViewController: UIViewController {
     */
 
 }
+
