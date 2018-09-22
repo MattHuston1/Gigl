@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import Alamofire
 
 class BandViewController: UIViewController, UITextFieldDelegate  {
     
@@ -69,8 +70,31 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func SubmitButton(_ sender: Any) {
-        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)\nMessage: \(Message.text!)"
+//        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)\nMessage: \(Message.text!)"
         performSegue(withIdentifier: "BandInfo", sender: self)
+        
+        let parameters = [
+            "band_name": "\(BandName.text!)",
+            "genre": "\(Genre.text!)",
+            "website": "\(Website.text!)",
+            "location": "\(Location.text!)",
+            "date": "\(Date.text!)",
+            "email": "\(Email.text!)",
+            "message": "\(Message.text!)"
+        ]
+        
+        Alamofire.request("https://bookmybandserver.herokuapp.com/bands", method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                print(response)
+                
+                break
+            case .failure(let error):
+                
+                print(error)
+            }
+        }
 
     }
     
