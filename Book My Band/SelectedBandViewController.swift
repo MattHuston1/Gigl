@@ -49,6 +49,7 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         var dict = arrRes[(indexPath as NSIndexPath).row]
         print(dict)
+//        print(dict["id"])
 
         cell.textLabel?.text = dict["band_name"] as? String
         cell.detailTextLabel?.text = dict["genre"] as? String

@@ -9,6 +9,7 @@
 import UIKit
 
 class SelectedBandDetailsViewController: UIViewController {
+    
     @IBOutlet weak var BandDetailsTextView: UITextView!
     
     override func viewDidLoad() {
