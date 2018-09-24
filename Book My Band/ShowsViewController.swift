@@ -44,6 +44,10 @@ class ShowsViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrRes.count
     }
@@ -54,8 +58,25 @@ class ShowsViewController: UIViewController, UITableViewDataSource, UITableViewD
         print(dict)
         cell.textLabel?.text = dict["band_name"] as? String
         cell.detailTextLabel?.text = dict["genre"] as? String
+        if (indexPath.row % 2 == 0)
+        {
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.backgroundColor = UIColor.gray
+        }
         return cell
     }
+    
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
+//                   forRowAtIndexPath indexPath: NSIndexPath)
+//    {
+//        if (indexPath.row % 2 == 0)
+//        {
+//            cell.backgroundColor = UIColor.blue
+//        } else {
+//            cell.backgroundColor = UIColor.white
+//        }
+//    }
     
     
     
@@ -64,15 +85,5 @@ class ShowsViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

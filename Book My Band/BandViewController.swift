@@ -70,7 +70,7 @@ class BandViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func SubmitButton(_ sender: Any) {
-//        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)\nMessage: \(Message.text!)"
+        self.bandInfo = "Band Name: \(BandName.text!)\nGenre: \(Genre.text!)\nWebsite: \(Website.text!)\nDate: \(Date.text!)\nLocation: \(Location.text!)\nEmail: \(Email.text!)\nMessage: \(Message.text!)"
         performSegue(withIdentifier: "BandInfo", sender: self)
         
         let parameters = [

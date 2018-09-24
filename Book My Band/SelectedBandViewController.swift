@@ -27,7 +27,7 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
                 //                print(swiftyJsonVar)
                 if let resData = swiftyJsonVar["bands"].arrayObject {
                     self.arrRes = resData as! [[String:AnyObject]]
-                    print(self.arrRes)
+//                    print(self.arrRes)
                 }
                 if self.arrRes.count > 0 {
                     self.BandInfoTableView.reloadData()
@@ -35,6 +35,11 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrRes.count
@@ -44,11 +49,25 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         var dict = arrRes[(indexPath as NSIndexPath).row]
         print(dict)
+
         cell.textLabel?.text = dict["band_name"] as? String
         cell.detailTextLabel?.text = dict["genre"] as? String
+        if (indexPath.row % 2 == 0)
+        {
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.backgroundColor = UIColor.gray
+        }
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var name2 = String()
+//        BandInfoTableView.deselectRow(at: indexPath, animated: true)
+//
+//
+//    }
+
 
         // Do any additional setup after loading the view.
 
@@ -56,16 +75,5 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
