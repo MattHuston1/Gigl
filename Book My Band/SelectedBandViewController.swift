@@ -10,21 +10,27 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+var arrRes = [[String:AnyObject]]()
+var myIndex = 0
+
 class SelectedBandViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+    var arrRes = [[String:AnyObject]]()
+
 
     @IBOutlet weak var BandInfoTableView: UITableView!
     
-    var arrRes = [[String:AnyObject]]()
+    @IBOutlet weak var Genre: UILabel!
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Alamofire.request("https://bookmybandserver.herokuapp.com/bands").responseJSON { (responseData) -> Void in
+//            print(responseData)
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
-                //                print(swiftyJsonVar)
+//                                print(swiftyJsonVar)
                 if let resData = swiftyJsonVar["bands"].arrayObject {
                     self.arrRes = resData as! [[String:AnyObject]]
 //                    print(self.arrRes)
@@ -34,6 +40,22 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
                 }
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+//        let name = BandInfoTableView.visibleCells
+//        print(name)
+
+        // Get the index path from the cell that was tapped
+        let indexPath = BandInfoTableView.indexPathForSelectedRow
+        // Get the Row of the Index Path and set as index
+        let index = indexPath?.row
+        print(index)
+        // Get in touch with the DetailViewController
+        let detailViewController = segue.destination as! SelectedBandDetailsViewController
+        // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+        detailViewController.index = index
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -46,13 +68,21 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var dict = arrRes[(indexPath as NSIndexPath).row]
-        print(dict)
+//        print(dict)
 //        print(dict["id"])
+//        print(type(of: (dict["id"])))
+        
+        let id = (dict["id"])
+//        let s = String(describing: id)
+//        print(s)
+//        print(type(of: s))
 
+        
         cell.textLabel?.text = dict["band_name"] as? String
-        cell.detailTextLabel?.text = dict["genre"] as? String
+        cell.detailTextLabel?.text = String(describing: id!)
+        
         if (indexPath.row % 2 == 0)
         {
             cell.backgroundColor = UIColor.lightGray
@@ -62,12 +92,22 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var name2 = String()
-//        BandInfoTableView.deselectRow(at: indexPath, animated: true)
-//
-//
-//    }
+   
+    
+    override func viewDidAppear(_ animated: Bool) {
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            myIndex = indexPath.row
+            print(arrRes[myIndex])
+            performSegue(withIdentifier: "Segue", sender: self)
+            
+            //        let vc = storyboard?.instantiateViewController(withIdentifier: "SelectedBandDetails")
+            //        self.navigationController?.pushViewController(vc!, animated: true)
+            //        print(vc)
+            //        var name2 = String()
+            //        BandInfoTableView.deselectRow(at: indexPath, animated: true)
+            
+        }
+    }
 
 
         // Do any additional setup after loading the view.

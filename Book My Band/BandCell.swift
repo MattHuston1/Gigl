@@ -9,8 +9,9 @@
 import UIKit
 
 class BandCell: UITableViewCell {
-    @IBOutlet weak var textLable: UILabel!
-    @IBOutlet weak var detailTextLable: UILabel!
+    
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Id: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
