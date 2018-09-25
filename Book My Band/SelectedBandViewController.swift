@@ -51,11 +51,13 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
         let indexPath = BandInfoTableView.indexPathForSelectedRow
         // Get the Row of the Index Path and set as index
         let index = indexPath?.row
-        print(index)
+        let bandDetails = arrRes[index!]
+        let bandID = bandDetails["id"]
+        print(bandDetails["id"])
         // Get in touch with the DetailViewController
         let detailViewController = segue.destination as! SelectedBandDetailsViewController
         // Pass on the data to the Detail ViewController by setting it's indexPathRow value
-        detailViewController.index = index
+        detailViewController.index = bandID as! Int
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

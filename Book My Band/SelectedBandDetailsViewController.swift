@@ -16,13 +16,9 @@ class SelectedBandDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var strIndex = String(describing: index)
-//        print(strIndex)
-//        print(type(of: strIndex))
-//        print(arrRes[index])
-        label.text = ("You tapped the cell at index \(index)")
-//        label.text = String(describing: arrRes)
-        // Do any additional setup after loading the view.
+
+        label.text = ("ID: \(index!)")
+
     }
     
     @IBAction func Book(_ sender: Any) {
