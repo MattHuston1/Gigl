@@ -27,7 +27,6 @@ class SelectedBandDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         Alamofire.request("https://bookmybandserver.herokuapp.com/bands/\(index!)").responseJSON { (responseData) -> Void in
-//            print(responseData)
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 let band = swiftyJsonVar["bands"]
@@ -48,24 +47,11 @@ class SelectedBandDetailsViewController: UIViewController {
                 self.Website?.text = ("\(website)")
                 self.Date?.text = ("\(newDate)")
 
+//                if let resData = swiftyJsonVar["bands"].arrayObject {
+//                    self.bandArr = resData as! [[String:AnyObject]]
+//            }
+    
 
-                print(bandName)
-                print(genre)
-                print(email)
-                print(location)
-                print(message)
-                print(type(of: newDate))
-//                print(band)
-//                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["bands"].arrayObject {
-                    self.bandArr = resData as! [[String:AnyObject]]
-//                    print(self.bandArr)
-            }
-    
-    
-//    @IBAction func Book(_ sender: Any) {
-//
-//    }
     
 }
 }

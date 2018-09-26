@@ -61,7 +61,7 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 100
     }
     
     
@@ -101,13 +101,13 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
 //            myIndex = indexPath.row
 ////            print(arrRes[myIndex])
 //            performSegue(withIdentifier: "Segue", sender: self)
-//            
+//
 //            //        let vc = storyboard?.instantiateViewController(withIdentifier: "SelectedBandDetails")
 //            //        self.navigationController?.pushViewController(vc!, animated: true)
 //            //        print(vc)
 //            //        var name2 = String()
 //            //        BandInfoTableView.deselectRow(at: indexPath, animated: true)
-//            
+//
 //        }
 //    }
 
