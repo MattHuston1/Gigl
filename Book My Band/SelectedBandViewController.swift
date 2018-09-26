@@ -53,7 +53,7 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
         let index = indexPath?.row
         let bandDetails = arrRes[index!]
         let bandID = bandDetails["id"]
-        print(bandDetails["id"])
+//        print(bandDetails["id"])
         // Get in touch with the DetailViewController
         let detailViewController = segue.destination as! SelectedBandDetailsViewController
         // Pass on the data to the Detail ViewController by setting it's indexPathRow value
@@ -96,20 +96,20 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
     
    
     
-    override func viewDidAppear(_ animated: Bool) {
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            myIndex = indexPath.row
-            print(arrRes[myIndex])
-            performSegue(withIdentifier: "Segue", sender: self)
-            
-            //        let vc = storyboard?.instantiateViewController(withIdentifier: "SelectedBandDetails")
-            //        self.navigationController?.pushViewController(vc!, animated: true)
-            //        print(vc)
-            //        var name2 = String()
-            //        BandInfoTableView.deselectRow(at: indexPath, animated: true)
-            
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            myIndex = indexPath.row
+////            print(arrRes[myIndex])
+//            performSegue(withIdentifier: "Segue", sender: self)
+//            
+//            //        let vc = storyboard?.instantiateViewController(withIdentifier: "SelectedBandDetails")
+//            //        self.navigationController?.pushViewController(vc!, animated: true)
+//            //        print(vc)
+//            //        var name2 = String()
+//            //        BandInfoTableView.deselectRow(at: indexPath, animated: true)
+//            
+//        }
+//    }
 
 
         // Do any additional setup after loading the view.

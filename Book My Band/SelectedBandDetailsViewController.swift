@@ -7,21 +7,68 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SelectedBandDetailsViewController: UIViewController {
+    var bandArr = [[String:AnyObject]]()
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var BandDetailsTextView: UITextView!
+    @IBOutlet weak var BandName: UILabel!
+    @IBOutlet weak var Genre: UILabel!
+    @IBOutlet weak var Email: UILabel!
+    @IBOutlet weak var Location: UILabel!
+    @IBOutlet weak var Message: UILabel!
+    @IBOutlet weak var TextView: UITextView!
+    @IBOutlet weak var Website: UILabel!
+    @IBOutlet weak var Date: UILabel!
+    
     var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Alamofire.request("https://bookmybandserver.herokuapp.com/bands/\(index!)").responseJSON { (responseData) -> Void in
+//            print(responseData)
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                let band = swiftyJsonVar["bands"]
+                let bandName = band["band_name"]
+                let genre = band["genre"]
+                let email = band["email"]
+                let location = band["location"]
+                let message = band["message"]
+                let website = band["website"]
+                let date = band["date"]
+                let strDate = "\(date)"
+                let newDate = strDate.prefix(10)
+                self.BandName?.text = ("\(bandName)")
+                self.Genre?.text = ("\(genre)")
+                self.Email?.text = ("\(email)")
+                self.Location?.text = ("\(location)")
+                self.Message?.text = ("\(message)")
+                self.Website?.text = ("\(website)")
+                self.Date?.text = ("\(newDate)")
 
-        label.text = ("ID: \(index!)")
 
-    }
+                print(bandName)
+                print(genre)
+                print(email)
+                print(location)
+                print(message)
+                print(type(of: newDate))
+//                print(band)
+//                print(swiftyJsonVar)
+                if let resData = swiftyJsonVar["bands"].arrayObject {
+                    self.bandArr = resData as! [[String:AnyObject]]
+//                    print(self.bandArr)
+            }
     
-    @IBAction func Book(_ sender: Any) {
-    }
     
+//    @IBAction func Book(_ sender: Any) {
+//
+//    }
+    
+}
+}
+}
 }
