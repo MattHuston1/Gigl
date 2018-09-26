@@ -18,7 +18,6 @@ class SelectedBandDetailsViewController: UIViewController {
     @IBOutlet weak var Email: UILabel!
     @IBOutlet weak var Location: UILabel!
     @IBOutlet weak var Message: UILabel!
-    @IBOutlet weak var TextView: UITextView!
     @IBOutlet weak var Website: UILabel!
     @IBOutlet weak var Date: UILabel!
     
