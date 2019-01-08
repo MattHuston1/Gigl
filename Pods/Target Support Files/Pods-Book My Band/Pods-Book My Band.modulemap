@@ -1,0 +1,6 @@
+framework module Pods_Book_My_Band {
+  umbrella header "Pods-Book My Band-umbrella.h"
+
+  export *
+  module * { export * }
+}

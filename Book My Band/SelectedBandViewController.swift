@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
+import Alamofire
 
 var arrRes = [[String:AnyObject]]()
 var myIndex = 0
@@ -30,7 +30,7 @@ class SelectedBandViewController: UIViewController, UITableViewDataSource, UITab
 //            print(responseData)
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
-//                                print(swiftyJsonVar)
+                                print(swiftyJsonVar)
                 if let resData = swiftyJsonVar["bands"].arrayObject {
                     self.arrRes = resData as! [[String:AnyObject]]
 //                    print(self.arrRes)

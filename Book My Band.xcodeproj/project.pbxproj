@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220A2537215959270027E2EC /* SelectedBandDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A2536215959270027E2EC /* SelectedBandDetailsViewController.swift */; };
 		22383B90214ABFDF00CAC7BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383B8F214ABFDF00CAC7BF /* AppDelegate.swift */; };
 		22383B92214ABFDF00CAC7BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383B91214ABFDF00CAC7BF /* ViewController.swift */; };
 		22383B95214ABFDF00CAC7BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22383B93214ABFDF00CAC7BF /* Main.storyboard */; };
@@ -15,9 +16,14 @@
 		22383BA4214ACEE000CAC7BF /* BandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA3214ACEE000CAC7BF /* BandViewController.swift */; };
 		22383BA6214AD43B00CAC7BF /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA5214AD43A00CAC7BF /* ShowsViewController.swift */; };
 		22383BA8214B056900CAC7BF /* PromoterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA7214B056900CAC7BF /* PromoterViewController.swift */; };
+		22383BAA21554DD700CAC7BF /* BandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BA921554DD700CAC7BF /* BandCell.swift */; };
+		22383BAC21554F7700CAC7BF /* BandObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BAB21554F7700CAC7BF /* BandObject.swift */; };
+		22383BAE2155639400CAC7BF /* SelectedBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22383BAD2155639400CAC7BF /* SelectedBandViewController.swift */; };
+		A55D7EA571B2106ACE21D46D /* Pods_Book_My_Band.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFDCCF5951CD49892FD046B /* Pods_Book_My_Band.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220A2536215959270027E2EC /* SelectedBandDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBandDetailsViewController.swift; sourceTree = "<group>"; };
 		22383B8C214ABFDF00CAC7BF /* Book My Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Book My Band.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22383B8F214ABFDF00CAC7BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22383B91214ABFDF00CAC7BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +34,12 @@
 		22383BA3214ACEE000CAC7BF /* BandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandViewController.swift; sourceTree = "<group>"; };
 		22383BA5214AD43A00CAC7BF /* ShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		22383BA7214B056900CAC7BF /* PromoterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoterViewController.swift; path = Assets.xcassets/PromoterViewController.swift; sourceTree = "<group>"; };
+		22383BA921554DD700CAC7BF /* BandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandCell.swift; sourceTree = "<group>"; };
+		22383BAB21554F7700CAC7BF /* BandObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandObject.swift; sourceTree = "<group>"; };
+		22383BAD2155639400CAC7BF /* SelectedBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBandViewController.swift; sourceTree = "<group>"; };
+		8474EE2DCB56F7A13FBA1502 /* Pods-Book My Band.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Book My Band.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Book My Band/Pods-Book My Band.debug.xcconfig"; sourceTree = "<group>"; };
+		DF1B7C18F5B869B252582ACB /* Pods-Book My Band.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Book My Band.release.xcconfig"; path = "Pods/Target Support Files/Pods-Book My Band/Pods-Book My Band.release.xcconfig"; sourceTree = "<group>"; };
+		EAFDCCF5951CD49892FD046B /* Pods_Book_My_Band.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Book_My_Band.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55D7EA571B2106ACE21D46D /* Pods_Book_My_Band.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +59,8 @@
 			children = (
 				22383B8E214ABFDF00CAC7BF /* Book My Band */,
 				22383B8D214ABFDF00CAC7BF /* Products */,
+				959D077424F8AE50C855C45B /* Pods */,
+				4CCCBEC20F7D848FE5A74ED5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,12 +80,33 @@
 				22383BA3214ACEE000CAC7BF /* BandViewController.swift */,
 				22383BA7214B056900CAC7BF /* PromoterViewController.swift */,
 				22383BA5214AD43A00CAC7BF /* ShowsViewController.swift */,
+				22383BAD2155639400CAC7BF /* SelectedBandViewController.swift */,
+				220A2536215959270027E2EC /* SelectedBandDetailsViewController.swift */,
+				22383BAB21554F7700CAC7BF /* BandObject.swift */,
+				22383BA921554DD700CAC7BF /* BandCell.swift */,
 				22383B93214ABFDF00CAC7BF /* Main.storyboard */,
 				22383B96214ABFE200CAC7BF /* Assets.xcassets */,
 				22383B98214ABFE200CAC7BF /* LaunchScreen.storyboard */,
 				22383B9B214ABFE200CAC7BF /* Info.plist */,
 			);
 			path = "Book My Band";
+			sourceTree = "<group>";
+		};
+		4CCCBEC20F7D848FE5A74ED5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDCCF5951CD49892FD046B /* Pods_Book_My_Band.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		959D077424F8AE50C855C45B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8474EE2DCB56F7A13FBA1502 /* Pods-Book My Band.debug.xcconfig */,
+				DF1B7C18F5B869B252582ACB /* Pods-Book My Band.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22383B9E214ABFE200CAC7BF /* Build configuration list for PBXNativeTarget "Book My Band" */;
 			buildPhases = (
+				714EF14E98AFB86C308AA529 /* [CP] Check Pods Manifest.lock */,
 				22383B88214ABFDF00CAC7BF /* Sources */,
 				22383B89214ABFDF00CAC7BF /* Frameworks */,
 				22383B8A214ABFDF00CAC7BF /* Resources */,
+				BA4B61AE0214C0AA428B1C74 /* [CP] Copy Pods Resources */,
+				21AE10C191F922D5A1D81448 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,12 +178,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21AE10C191F922D5A1D81448 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Book My Band/Pods-Book My Band-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Book My Band/Pods-Book My Band-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714EF14E98AFB86C308AA529 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Book My Band-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA4B61AE0214C0AA428B1C74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Book My Band/Pods-Book My Band-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Book My Band/Pods-Book My Band-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22383B88214ABFDF00CAC7BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22383BAE2155639400CAC7BF /* SelectedBandViewController.swift in Sources */,
+				220A2537215959270027E2EC /* SelectedBandDetailsViewController.swift in Sources */,
+				22383BAA21554DD700CAC7BF /* BandCell.swift in Sources */,
 				22383BA4214ACEE000CAC7BF /* BandViewController.swift in Sources */,
+				22383BAC21554F7700CAC7BF /* BandObject.swift in Sources */,
 				22383B92214ABFDF00CAC7BF /* ViewController.swift in Sources */,
 				22383B90214ABFDF00CAC7BF /* AppDelegate.swift in Sources */,
 				22383BA8214B056900CAC7BF /* PromoterViewController.swift in Sources */,
@@ -290,6 +394,7 @@
 		};
 		22383B9F214ABFE200CAC7BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8474EE2DCB56F7A13FBA1502 /* Pods-Book My Band.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +413,7 @@
 		};
 		22383BA0214ABFE200CAC7BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF1B7C18F5B869B252582ACB /* Pods-Book My Band.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
